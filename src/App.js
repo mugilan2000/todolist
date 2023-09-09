@@ -50,10 +50,10 @@ function App() {
         newItem = {newItem}
         setNewItem = {setNewItem}
         handleSubmit={handleSubmit}
+        year = {year}
       />
       <Content 
       items = {items}
-      year = {year}
       handleCheck = {handleCheck}
       handleDelete = {handleDelete}
       />

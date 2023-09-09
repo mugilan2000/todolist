@@ -1,11 +1,10 @@
 import React from 'react'
 import Itemslist from './Itemslist'
 
-const Content = ({items, handleCheck, handleDelete, year}) => {
+const Content = ({items, handleCheck, handleDelete}) => {
     
   return (
     <main>
-        <p>List of items to do for the day {year.getDate()+'-'+(year.getMonth()+1)+'-'+year.getFullYear()}</p>
         {(items.length) ? (
         <Itemslist 
         items = {items}
