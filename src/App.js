@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react'
 import apiRequest from './apiRequest';
 
 function App() {
-  const API_URL = "http://localhost:3500/items";
+  const API_URL = "https://my-json-server.typicode.com/mugilan2000/todolist/items";
   const year = new Date();
   const [items, setItems] = useState([]);
 
