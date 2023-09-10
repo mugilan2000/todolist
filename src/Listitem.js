@@ -1,4 +1,5 @@
 import React from 'react'
+import trashIcon from './trashIcon.svg'
 
 const Listitem = ({ item, handleCheck, handleDelete }) => {
     return (
@@ -10,7 +11,8 @@ const Listitem = ({ item, handleCheck, handleDelete }) => {
                 style={(item.checked ? { textDecoration: 'line-through' } : null)}
             >{item.item}</label>
             {/* <button className='btn btn-danger' tabIndex='0' onClick={() => handleDelete(item.id)}><i class="fa-solid fa-trash"></i></button> */}
-            <i class="fa-solid fa-trash" id='deletebtn' role='button' onClick={() => handleDelete(item.id)}></i>
+            {/* <i class="fa-solid fa-trash" id='deletebtn' role='button' onClick={() => handleDelete(item.id)}></i> */}
+            <img src={trashIcon} alt='trashIcon' role='button' id='deletebtn' onClick={() => handleDelete(item.id)}/>
         </li>
     )
 }

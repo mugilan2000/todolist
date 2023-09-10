@@ -3,18 +3,28 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #5C76E5;
 }
 
 .App {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh; 
+  height: 80vh; 
   width: 100%; 
   max-width: 500px;
-  border: 1px solid gray;
-  margin: auto;
+  margin: auto; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 600px;
+  border-radius: 20px;
+  background-color: #FCFCFC;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
 }
 
 header {
@@ -37,8 +47,7 @@ main {
 footer {
   width: 100%;
   padding: 0.25em;
-  background-color: #505050;
-  color: aliceblue;
+  color: #646469;
   display: grid;
   place-content: center;
 }
@@ -50,16 +59,18 @@ li{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* border-bottom: 1px solid gray; */
-  background-color: #e4e4e4;
-  border-radius: 5px;
+  border-bottom: 1px solid #EEEEEE;
   margin-bottom: 10px;
-  box-shadow: 5px 3px 4px #aaaaaa;;
+  
 }
 li input[type='checkbox']{
   height: 50px;
   width: 20px;
   margin: 10px;
+  border-radius: 100%;
+}
+li label{
+  color: #646469;
 }
 li label, li button{
   margin: 10px;
@@ -74,6 +85,16 @@ li label, li button{
   font-size: 12px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+.headerItem{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.headerItem h4{
+  color: #646469;
+  margin-bottom: 0;
+}
 .itemForm{
   padding: 20px;
   display: flex;
@@ -86,22 +107,62 @@ li label, li button{
   border: none;
   border-bottom: 1px solid #198754;
   outline: none;
+  background-color: transparent;
 }
 .itemForm button{
   font-size: 20px;
+  border-radius: 50%;
+}
+.taskcount{
+  color: #5C76E5;
+  font-size: 20px;
+  text-align: left;
+  margin-left: 60px;
 }
 #deletebtn{
-  font-size: 22px;
-  color: #ba0505;
+  height: 30px;
   margin-left: 20px;
+  fill: #5C76E5;
 }
 #deletebtn:hover{
   color: red;
 }
 .btn{
-  background-color: #089e11;
+  background-color: #5C76E5;
   color: whitesmoke;
 }
 .btn:hover{
   color: whitesmoke;
+}
+.fetcherror{
+  color: red;
+  font-weight: 500;
+}
+.dots {
+  width: 56px;
+  height: 26.9px;
+  background: radial-gradient(circle closest-side,#5C76E5 90%,#0000) 0%   50%,
+         radial-gradient(circle closest-side,#5C76E5 90%,#0000) 50%  50%,
+         radial-gradient(circle closest-side,#5C76E5 90%,#0000) 100% 50%;
+  background-size: calc(100%/3) 13.4px;
+  background-repeat: no-repeat;
+  animation: dots-7ar3yq 1s infinite linear;
+}
+
+@keyframes dots-7ar3yq {
+  20% {
+     background-position: 0%   0%, 50%  50%,100%  50%;
+  }
+
+  40% {
+     background-position: 0% 100%, 50%   0%,100%  50%;
+  }
+
+  60% {
+     background-position: 0%  50%, 50% 100%,100%   0%;
+  }
+
+  80% {
+     background-position: 0%  50%, 50%  50%,100% 100%;
+  }
 }
