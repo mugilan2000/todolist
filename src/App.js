@@ -2,42 +2,16 @@ import Additem from './Additem';
 import './App.css';
 import Content from './Content';
 import Footer from './Footer';
-import Header from './Header';
-import { useEffect, useState } from 'react'
-import apiRequest from './apiRequest';
+import { useEffect, useState } from 'react';
 
 function App() {
-  const API_URL = "https://mugilan2000.github.io/jsonServer/db.json";
   const year = new Date();
   const [items, setItems] = useState([]);
 
   const [newItem, setNewItem] = useState('')
 
-  const [fetchError, setFetchError] = useState(null);
-
-  const[isLoading, setIsLoading] = useState(true);
-
   useEffect(() => {
-    const fetchItems = async () => {
-      try {
-        const response = await fetch(API_URL);
-        if (!response.ok) throw Error("Data not received from Server");
-        console.log(response);
-        const listItems = await response.json();
-        console.log(listItems);
-        setItems(listItems);
-        setFetchError(null);
-      } catch (err) {
-        setFetchError(err.message);
-      }
-      finally{
-        setIsLoading(false);
-      }
-    }
-    setTimeout(() => {
-      (async () => await fetchItems())()
-    }, 2000);
-    
+    JSON.parse(localStorage.getItem('todo_list'))
   }, [])
 
   const addItems = async (item) => {
@@ -46,16 +20,7 @@ function App() {
     const listItems = [...items, addNewItem]
     setItems(listItems)
 
-    const postOptions = {
-      method: 'POST',
-      headers:{
-        'Content-Type':'application/json'
-      },
-      body: JSON.stringify(addNewItem)
-    }
-
-    const result = await apiRequest(API_URL, postOptions)
-    if(result) setFetchError(result)
+    localStorage.setItem("todo_list",JSON.stringify(listItems))
   }
 
   const handleCheck = async (id) => {
@@ -64,19 +29,7 @@ function App() {
     )
     setItems(listItems);
 
-    const myItem = listItems.filter((item) => item.id === id)
-    const patchOptions = {
-      method: 'PATCH',
-      headers:{
-        'Content-Type':'application/json'
-      },
-      body: JSON.stringify({checked:myItem[0].checked})
-    }
-
-    const reqURL = `${API_URL}/${id}`;
-
-    const result = await apiRequest(reqURL, patchOptions)
-    if(result) setFetchError(result)
+    localStorage.setItem("todo_list",JSON.stringify(listItems))
 
   }
   const handleDelete = async (id) => {
@@ -85,15 +38,7 @@ function App() {
     )
     setItems(deleteItems);
 
-    const deleteOptions = {
-      method: 'DELETE'
-    }
-
-    const reqURL = `${API_URL}/${id}`;
-
-    const result = await apiRequest(reqURL, deleteOptions)
-    if(result) setFetchError(result)
-
+    localStorage.setItem("todo_list",JSON.stringify(deleteItems))
   }
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -115,13 +60,12 @@ function App() {
         length={items.length}
       />
       <main>
-        {isLoading && <div class="dots"></div>}
-        {fetchError && <p className='fetcherror'>{`Error: ${fetchError}`}</p>}
-        {!isLoading && !fetchError && <Content
+        
+        <Content
           items={items}
           handleCheck={handleCheck}
           handleDelete={handleDelete}
-        />}
+        />
       </main>
       <Footer
         length={items.length}
