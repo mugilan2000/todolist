@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import closeIcon from './close.svg' 
 
 const RemainderModal = ({ isOpen, onClose, title, itemId, items, setItems }) => {
 
@@ -10,12 +11,11 @@ const RemainderModal = ({ isOpen, onClose, title, itemId, items, setItems }) => 
     const handleRemainder = (event, id) => {
         event.preventDefault();
 
-        console.log(id)
+        
 
         if (date !== '' && time !== '') {
 
-            console.log(date)
-            console.log(time)
+            
 
             var dateTimeString = date + ' ' + time;
             var scheduledTime = new Date(dateTimeString)
@@ -34,10 +34,7 @@ const RemainderModal = ({ isOpen, onClose, title, itemId, items, setItems }) => 
             }
 
 
-            console.log(dateTimeString)
-            console.log(scheduledTime)
-            console.log(currentTime)
-            console.log(timeDiff)
+            
 
 
 
@@ -53,11 +50,11 @@ const RemainderModal = ({ isOpen, onClose, title, itemId, items, setItems }) => 
                     const listItems = items.map((item) =>
                         item.id === id ? {...item, remainder: null } : item
                     )
-                    console.log(itemId)
+                   
                     setItems(listItems);
                     localStorage.setItem("todo_list", JSON.stringify(listItems))
 
-                    console.log(listItems)
+                    
 
                     notification.onclick = () => {
                         window.focus();
@@ -91,6 +88,10 @@ const RemainderModal = ({ isOpen, onClose, title, itemId, items, setItems }) => 
                 break;
         }
     }
+
+    const handleClose = (e) => {
+        onClose();
+    }
     return (
         <div
             style={{
@@ -119,13 +120,20 @@ const RemainderModal = ({ isOpen, onClose, title, itemId, items, setItems }) => 
 
                 }}
             >
+                <img src={closeIcon} role='button' onClick={handleClose} style={{
+                    width: 30,
+                    position: "relative",
+                    right: "-220px"
+                }}></img>
                 <form className='remainderForm' onSubmit={(e) => handleRemainder(e, itemId)}>
                     <h6 style={{ marginBottom: 15 + 'px' }}>Task Name - {title}</h6>
                     <div><label>Set Date - </label><input type='date' id='date' value={date} onChange={(e) => handleInputChange(e, 'date', itemId)}></input></div>
                     <div><label>Set Time - </label><input type='time' id='time' value={time} onChange={(e) => handleInputChange(e, 'time', itemId)}></input></div>
                     <div><button className='addRemainderBtn'>Set Remainder</button>
+                    
                     </div>
                 </form>
+                
             </div>
         </div>
     )
