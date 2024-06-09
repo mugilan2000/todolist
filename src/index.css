@@ -127,6 +127,11 @@ li label, li button{
 #deletebtn:hover{
   color: red;
 }
+#remainderbtn{
+  height: 30px;
+  margin-left: 20px;
+  fill: #5C76E5;
+}
 .btn{
   background-color: #5C76E5;
   color: whitesmoke;
@@ -147,6 +152,44 @@ li label, li button{
   background-size: calc(100%/3) 13.4px;
   background-repeat: no-repeat;
   animation: dots-7ar3yq 1s infinite linear;
+}
+
+.remainderForm{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+#date{
+  border: 1px solid #198754;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+#date:focus{
+  border: 1px solid #198754;
+  outline: none;
+}
+
+#time{
+  border: 1px solid #198754;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+#time:focus{
+  border: 1px solid #198754;
+  outline: none;
+}
+
+.addRemainderBtn{
+  background-color: #5C76E5;
+  color: whitesmoke;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
 }
 
 @keyframes dots-7ar3yq {

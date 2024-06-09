@@ -16,7 +16,7 @@ function App() {
 
   const addItems = (item) => {
     const id = items.length ? items[items.length - 1].id + 1 : 1;
-    const addNewItem = { id, checked: false, item }
+    const addNewItem = { id, checked: false, item, remainder:null }
     const listItems = [...items, addNewItem]
     setItems(listItems)
 
@@ -49,6 +49,10 @@ function App() {
 
   }
 
+  const openSetRemainderWindow = () =>{
+      
+  }
+
   return (
     <div className="App">
       {/* <Header title='Daily Action Items' /> */}
@@ -61,8 +65,10 @@ function App() {
       />
       <Content
         items={items}
+        setItems = {setItems}
         handleCheck={handleCheck}
         handleDelete={handleDelete}
+        openSetRemainderWindow = {openSetRemainderWindow}
       />
 
       <Footer
