@@ -3,7 +3,7 @@ import Listitem from './Listitem'
 
 const Itemslist = ({ items, handleCheck, handleDelete, openSetRemainderWindow , setItems}) => {
     return (
-        <ul>
+        <tbody>
             {items.map((item) => (
 
                 <Listitem
@@ -16,7 +16,7 @@ const Itemslist = ({ items, handleCheck, handleDelete, openSetRemainderWindow , 
                 />
 
             ))}
-        </ul>
+        </tbody>
     )
 }
 

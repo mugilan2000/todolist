@@ -42,6 +42,7 @@ main {
   justify-content: flex-start;
   align-items: center;
   overflow-y: auto;
+  padding: 20px;
 }
 
 footer {
@@ -51,28 +52,31 @@ footer {
   display: grid;
   place-content: center;
 }
-ul{
+tbody{
   list-style: none;
   padding: 0;
 }
-li{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #EEEEEE;
-  margin-bottom: 10px;
+td{
+
+  padding: 10px;
   
 }
-li input[type='checkbox']{
+td input[type='checkbox']{
   height: 50px;
   width: 20px;
   margin: 10px;
   border-radius: 100%;
 }
-li label{
+td label{
   color: #646469;
 }
-li label, li button{
+.workitem{
+  word-wrap: break-word;
+  color: #646469;
+  text-align: left;
+}
+
+td label, td button{
   margin: 10px;
 }
 .myName{
