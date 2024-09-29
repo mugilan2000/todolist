@@ -136,6 +136,11 @@ td label, td button{
   margin-left: 20px;
   fill: #5C76E5;
 }
+#editbtn{
+  height: 30px;
+  margin-left: 20px;
+  fill: #5C76E5;
+}
 .btn{
   background-color: #5C76E5;
   color: whitesmoke;
@@ -189,6 +194,25 @@ td label, td button{
 }
 
 .addRemainderBtn{
+  background-color: #5C76E5;
+  color: whitesmoke;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+#editInput{
+  border: 1px solid #198754;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+#editInput:focus{
+  border: 1px solid #198754;
+  outline: none;
+}
+
+.editUpdateBtn{
   background-color: #5C76E5;
   color: whitesmoke;
   border: none;

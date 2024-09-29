@@ -6,7 +6,7 @@ const Footer = ({length}) => {
   return (
     <footer className='p-4'>
         Copyright &copy; {year.getFullYear()}
-        <p className='myName'>Developed by Mugilan S</p>
+        <p className='myName'>Developed by Muthu Saravana Mugilan S</p>
     </footer>
   )
 }
