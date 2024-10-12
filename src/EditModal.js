@@ -49,7 +49,7 @@ const EditModal = ({ isOpen, onClose, title, itemId, items, setItems }) => {
         >
             <div
                 style={{
-                    background: "#F2FFFF",
+                    background: "#FCFCFC",
                     height: 'auto',
                     width: 500,
                     margin: "auto",

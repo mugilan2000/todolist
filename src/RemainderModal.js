@@ -10,18 +10,19 @@ const RemainderModal = ({ isOpen, onClose, title, itemId, items, setItems }) => 
 
     const handleRemainder = (event, id) => {
         event.preventDefault();
-
         
 
         if (date !== '' && time !== '') {
-
-            
 
             var dateTimeString = date + ' ' + time;
             var scheduledTime = new Date(dateTimeString)
             var currentTime = new Date();
             var timeDiff = (scheduledTime.getTime() - currentTime.getTime());
 
+            console.log(dateTimeString)
+            console.log(scheduledTime)
+            console.log(currentTime)
+            console.log(timeDiff)
 
             if(scheduledTime.getTime() > currentTime.getTime()){
                 const listItems = items.map((item) =>
@@ -32,11 +33,6 @@ const RemainderModal = ({ isOpen, onClose, title, itemId, items, setItems }) => 
                 localStorage.setItem("todo_list", JSON.stringify(listItems))
 
             }
-
-
-            
-
-
 
             var timeoutIds = [];
 
@@ -52,9 +48,8 @@ const RemainderModal = ({ isOpen, onClose, title, itemId, items, setItems }) => 
                     )
                    
                     setItems(listItems);
+                    console.log(listItems)
                     localStorage.setItem("todo_list", JSON.stringify(listItems))
-
-                    
 
                     notification.onclick = () => {
                         window.focus();
@@ -92,6 +87,8 @@ const RemainderModal = ({ isOpen, onClose, title, itemId, items, setItems }) => 
     const handleClose = (e) => {
         onClose();
     }
+
+  
     return (
         <div
             style={{
@@ -110,7 +107,7 @@ const RemainderModal = ({ isOpen, onClose, title, itemId, items, setItems }) => 
         >
             <div
                 style={{
-                    background: "#F2FFFF",
+                    background: "#FCFCFC",
                     height: 'auto',
                     width: 500,
                     margin: "auto",
