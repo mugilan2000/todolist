@@ -213,6 +213,17 @@ td label, td button{
   outline: none;
 }
 
+#nameInput{
+  border: 1px solid #198754;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+#nameInput:focus{
+  border: 1px solid #198754;
+  outline: none;
+}
+
 .editUpdateBtn{
   background-color: #5C76E5;
   color: whitesmoke;
@@ -237,5 +248,14 @@ td label, td button{
   80% {
      background-position: 0%  50%, 50%  50%,100% 100%;
   }
+}
+
+.headerName{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px 20px;
+  color: #646469;
 }
 

@@ -2,7 +2,8 @@ import Additem from './Additem';
 import './App.css';
 import Content from './Content';
 import Footer from './Footer';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import NameModal from './NameModal';
 
 function App() {
   const year = new Date();
@@ -12,9 +13,18 @@ function App() {
 
   const [activeDrag, setActiveDrag] = useState(null)
 
-  // useEffect(() => {
-  //   JSON.parse(localStorage.getItem('todo_list'))
-  // }, [])
+  const [uname, setUname] = useState('')
+
+  useEffect(() => {
+    const name = localStorage.getItem('todo_name')
+
+    if(name === null || name === undefined){
+      setUname('No')
+    }
+    else{
+      setUname(name)
+    }
+  }, [])
 
   const addItems = (item) => {
     const id = items.length ? items[items.length - 1].id + 1 : 1;
@@ -69,6 +79,7 @@ function App() {
         year={year}
         length={items.length}
       />
+      {uname === 'No' ? <NameModal uname={uname} setUname = {setUname} /> : 
       <Content
         items={items}
         setItems = {setItems}
@@ -79,6 +90,7 @@ function App() {
         onDrop={onDrop}
         activeDrag = {activeDrag}
       />
+}
 
       <Footer
         length={items.length}
