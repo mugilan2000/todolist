@@ -1,7 +1,7 @@
 import React from 'react'
 import Itemslist from './Itemslist'
 
-const Content = ({items, handleCheck, handleDelete, openSetRemainderWindow, setItems}) => {
+const Content = ({items, handleCheck, handleDelete, openSetRemainderWindow, setItems, setActiveDrag, onDrop, activeDrag}) => {
     
   return (
     <main>
@@ -12,6 +12,9 @@ const Content = ({items, handleCheck, handleDelete, openSetRemainderWindow, setI
         handleCheck = {handleCheck}
         handleDelete = {handleDelete}
         openSetRemainderWindow = {openSetRemainderWindow}
+        setActiveDrag = {setActiveDrag}
+        onDrop = {onDrop}
+        activeDrag = {activeDrag}
         />
         ) : (
             <p className='text-danger'>Your list is empty</p>

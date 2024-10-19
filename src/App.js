@@ -10,13 +10,15 @@ function App() {
 
   const [newItem, setNewItem] = useState('')
 
+  const [activeDrag, setActiveDrag] = useState(null)
+
   // useEffect(() => {
   //   JSON.parse(localStorage.getItem('todo_list'))
   // }, [])
 
   const addItems = (item) => {
     const id = items.length ? items[items.length - 1].id + 1 : 1;
-    const addNewItem = { id, checked: false, item, remainder:null }
+    const addNewItem = { id, checked: false, item, remainder:null, draggableItem: null }
     const listItems = [...items, addNewItem]
     setItems(listItems)
 
@@ -49,6 +51,10 @@ function App() {
 
   }
 
+  const onDrop = (position) => {
+    console.log(position)
+  }
+
   const openSetRemainderWindow = () =>{
       
   }
@@ -69,6 +75,9 @@ function App() {
         handleCheck={handleCheck}
         handleDelete={handleDelete}
         openSetRemainderWindow = {openSetRemainderWindow}
+        setActiveDrag = {setActiveDrag}
+        onDrop={onDrop}
+        activeDrag = {activeDrag}
       />
 
       <Footer
