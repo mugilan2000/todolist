@@ -19,10 +19,10 @@ const Additem = ({ newItem, setNewItem, handleSubmit, year, length }) => {
     if (year.getHours() < 12) {
       setGreetings("Good Morning")
     }
-    else if (year.getHours() > 12 && year.getHours() <= 15) {
+    else if (year.getHours() >= 12 && year.getHours() <= 15) {
       setGreetings("Good Afternoon")
     }
-    else if (year.getHours() > 15 && year.getHours() <= 20) {
+    else if (year.getHours() >= 15 && year.getHours() <= 20) {
       setGreetings("Good Evening")
     }
     else {
