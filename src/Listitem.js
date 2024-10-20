@@ -65,7 +65,7 @@ const Listitem = ({ item, handleCheck, activeDrag, index, handleDelete, openSetR
             }`} key={item.id} draggable='true' onDragStart={() => handleDragStart(index)}
             onDragOver={() => handleDragOver(index)}
             onDrop={() => handleDrop(index)}>
-            <td><input type='checkbox' checked={item.checked}
+            <td><input type='checkbox' title='Mark as completed' checked={item.checked} id='check'
                 onChange={() => handleCheck(item.id)}
             /></td>
             <td className='workitem'><span onDoubleClick={() => handleCheck(item.id)}

@@ -59,7 +59,7 @@ const EditModal = ({ isOpen, onClose, title, itemId, items, setItems }) => {
 
                 }}
             >
-                <img src={closeIcon} role='button' onClick={handleClose} style={{
+                <img src={closeIcon} role='button' alt='close' onClick={handleClose} style={{
                     width: 30,
                     position: "relative",
                     right: "-220px"
