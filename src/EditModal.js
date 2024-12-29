@@ -45,7 +45,10 @@ const EditModal = ({ isOpen, onClose, title, itemId, items, setItems }) => {
                 justifyContent: "center",
                 overflowY: "auto"
 
-            }}
+            }
+        }
+
+            
         >
             <div
                 style={{
@@ -58,6 +61,8 @@ const EditModal = ({ isOpen, onClose, title, itemId, items, setItems }) => {
                     overflowY: "auto"
 
                 }}
+
+                
             >
                 <img src={closeIcon} role='button' alt='close' onClick={handleClose} style={{
                     width: 30,

@@ -75,7 +75,7 @@ const Listitem = ({ item, handleCheck, activeDrag, index, handleDelete, openSetR
             {/* <i class="fa-solid fa-trash" id='deletebtn' role='button' onClick={() => handleDelete(item.id)}></i> */}
             <td><img src={editIcon} alt='editIcon' role='button' id='editbtn' onClick={handleEditModalOpen} /></td>
             {item.remainder ? <td><label>{item.remainder}</label></td> :
-                <td><img src={timerIcon} alt='timerIcon' role='button' id='remainderbtn' onClick={handleModalOpen} /></td>}
+                <td className='remainderTd'><img src={timerIcon} alt='timerIcon' role='button' id='remainderbtn' onClick={handleModalOpen} /></td>}
             <td><img src={trashIcon} alt='trashIcon' role='button' id='deletebtn' onClick={() => handleDelete(item.id)} /></td>
             <RemainderModal isOpen={addRemainderModalOpen} onClose={handleModalClose} title={item.item} itemId={item.id} items={items} setItems={setItems} />
             <EditModal isOpen={editModalOpen} onClose={handleEditModalClose} title={item.item} itemId={item.id} items={items} setItems={setItems} />

@@ -17,7 +17,7 @@ const Content = ({items, handleCheck, handleDelete, openSetRemainderWindow, setI
         activeDrag = {activeDrag}
         />
         ) : (
-            <p className='text-danger'>Your list is empty</p>
+            <p className='text-danger'>No Tasks</p>
         )
 }
     </main>
