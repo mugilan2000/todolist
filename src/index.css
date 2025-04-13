@@ -190,18 +190,20 @@ td label, td button{
   animation: dots-7ar3yq 1s infinite linear;
 }
 
-.remainderForm{
+/* .remainderForm{
   display: flex;
   flex-direction: column;
   width: 100%;
   justify-content: center;
   align-items: center;
-}
+} */
 
 #date{
   border: 1px solid #198754;
   margin-bottom: 10px;
   padding: 10px;
+  border-radius: 10px;
+  margin: 5px;
 }
 
 #date:focus{
@@ -213,6 +215,8 @@ td label, td button{
   border: 1px solid #198754;
   margin-bottom: 10px;
   padding: 10px;
+  border-radius: 10px;
+  margin: 5px;
 }
 
 #time:focus{
@@ -224,14 +228,18 @@ td label, td button{
   background-color: #5C76E5;
   color: whitesmoke;
   border: none;
+  width: 50%;
   padding: 10px;
-  border-radius: 20px;
+  margin: 20px;
+  border-radius: 10px;
 }
 
 #editInput{
   border: 1px solid #198754;
   margin-bottom: 10px;
   padding: 10px;
+  border-radius: 10px;
+  margin: 5px;
 }
 
 #editInput:focus{
@@ -254,8 +262,10 @@ td label, td button{
   background-color: #5C76E5;
   color: whitesmoke;
   border: none;
+  width: 50%;
   padding: 10px;
-  border-radius: 20px;
+  margin: 20px;
+  border-radius: 10px;
 }
 
 @keyframes dots-7ar3yq {
