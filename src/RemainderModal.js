@@ -39,8 +39,8 @@ const RemainderModal = ({ isOpen, onClose, title, itemId, items, setItems }) => 
             if (timeDiff > 0) {
                 const timeoutID = setTimeout(function (id) {
 
-                    const notification = new Notification(title, {
-                        body: "come back"
+                    const notification = new Notification("Task is Waiting! ", {
+                        body: title
                     })
 
                     const listItems = items.map((item) =>
